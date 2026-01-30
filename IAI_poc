@@ -267,7 +267,7 @@ def recommend_tools(category: str) -> List[Dict[str, str]]:
 
 # 4. 전체 흐름 실행 함수 
 def run_iai_once():
-    print("===== IAI - AI 선택비서 (규칙 기반 PoC) =====")
+    print("===== IAI =====")
     user_text = input("지금 뭐 하려고 하는지 편하게 한 줄로 써주세요 :)\n> ")
 
     # 1) 작업 카테고리 분류
@@ -276,15 +276,11 @@ def run_iai_once():
     # 2) 도구 추천
     tools = recommend_tools(category)
 
-    # 3) 결과 출력
-    print("\n[판단된 작업 카테고리]")
-    print(f"- {category}")
-
     if not tools:
         print("\n[추천 결과]\n- 현재 카테고리에 매핑된 도구가 없습니다. 카테고리/키워드를 확장해 주세요.")
         return
 
-    print("\n[추천 AI 도구]")
+    print("\n[추천]")
     for i, tool in enumerate(tools[:4], start=1):  # 최대 4개만 보여주기
         print(f"{i}. {tool['name']}")
         print(f"   - 설명: {tool['desc']}")
