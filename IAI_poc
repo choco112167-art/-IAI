@@ -1,5 +1,5 @@
 """
-IAI - AI 선택비서 (규칙 기반 PoC)
+IAI - AI 선택비서 
 
 - 기능: 사용자 입력 → 작업 카테고리 분류(키워드 규칙) → 카테고리별 대표 AI 도구 추천
 - 카테고리:
@@ -246,7 +246,7 @@ KEYWORDS_TO_CATEGORY = {
 
 
 def classify_task(user_text: str) -> str:
-    """사용자 입력을 보고 작업 카테고리를 간단히 분류하는 함수 (규칙 기반).
+    """사용자 입력을 보고 작업 카테고리를 간단히 분류하는 함수 
     일치하는 키워드가 없으면 기본값으로 document_writing을 사용.
     """
     text = user_text.strip()
@@ -265,8 +265,7 @@ def recommend_tools(category: str) -> List[Dict[str, str]]:
     return ai_tools.get(category, [])
 
 
-# 4. 전체 흐름 실행 함수 (입력 → 분류 → 추천 → 출력)
-
+# 4. 전체 흐름 실행 함수 
 def run_iai_once():
     print("===== IAI - AI 선택비서 (규칙 기반 PoC) =====")
     user_text = input("지금 뭐 하려고 하는지 편하게 한 줄로 써주세요 :)\n> ")
